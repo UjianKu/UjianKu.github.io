@@ -57,6 +57,27 @@
             </button>
         </div>
     </div>
+
+    <div class="max-w-md mx-auto mt-6 p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-[#655E7A] text-lg font-bold mb-2">Cara Pengisian</h2>
+        <ul class="list-disc list-inside text-gray-700">
+            <ul class="list-disc list-inside text-gray-700">
+    			<li><strong>Nama:</strong> Nama asli Anda</li>
+    			<li><strong>Asal Sekolah:</strong> Asal sekolah Anda</li>
+    			<li><strong>Kelas:</strong> Kelas Anda saat ini</li>
+    			<li><strong>Layanan:</strong> Jenis layanan yang Anda gunakan</li>
+    			<li><strong>Metode Pembayaran:</strong> Metode pembayaran yang Anda inginkan</li> 
+ 			   <br><strong>Catatan:</strong><br>
+			    <li>Bagi yang tidak memiliki E-Wallet premium, silakan pilih "Tako", tetapi akan dikenakan biaya sebesar Rp 1000,-</li>
+			    <li>Bagi yang mengisi data asal-asalan atau tidak faktual, maka permintaan akan ditolak dan diblokir otomatis</li>
+			</ul>
+        </ul>
+    </div>
+
+    <div class="max-w-md mx-auto mt-6 p-4 bg-[#655E7A] text-white text-center rounded-lg shadow-md">
+       Terimakasih Telah Membeli
+    </div>
+
     <script>
         function generateWhatsAppLink() {
             const nama = document.getElementById('nama').value;
@@ -78,9 +99,9 @@
 
             const encodedMessage = encodeURIComponent(message);
             const waLink = `https://wa.me/6285783054947?text=${encodedMessage}`;
+  
             window.open(waLink, '_blank');
         }
     </script>
 </body>
 </html>
-              
