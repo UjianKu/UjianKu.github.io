@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-md mx-auto mt-10 p-4 bg-white rounded-lg shadow-md">
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="nama">
+                Nama:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nama" type="text" placeholder="">
+        </div>
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="sekolah">
+                Asal Sekolah:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sekolah" type="text" placeholder="">
+        </div>
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="kelas">
+                Kelas:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="kelas" type="text" placeholder="">
+        </div>
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="layanan">
+                Pilih Layanan:
+            </label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="layanan">
+                <option>Pilih Layanan</option>
+                <option>Kode Aplikasi</option>
+                <option>Link Ujian</option>
+                <option>Membership</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="payment">
+                Pilih Metode Pembayaran:
+            </label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="payment">
+                <option>Pilih Metode</option>
+                <option>Dana</option>
+                <option>Ovo</option>
+                <option>Gopay</option>
+                <option>Tako +Rp1000 (Untuk Yang E-Walletnya tidak peremium)</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block text-[#655E7A] text-sm font-bold mb-2" for="catatan">
+                Catatan:
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="catatan" placeholder="Opsional"></textarea>
+        </div>
+        <div class="mb-4">
+            <button class="bg-[#655E7A] hover:bg-[#5d5370] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="generateWhatsAppLink()">
+                Kirim ke WhatsApp
+            </button>
+        </div>
+    </div>
+    <script>
+        function generateWhatsAppLink() {
+            const nama = document.getElementById('nama').value;
+            const sekolah = document.getElementById('sekolah').value;
+            const kelas = document.getElementById('kelas').value;
+            const layanan = document.getElementById('layanan').value;
+            const payment = document.getElementById('payment').value;
+            const catatan = document.getElementById('catatan').value;
+
+            const message = `
+[ *DETAIL PEMBELIAN*  ] \n
+*Nama:* ${nama}
+*Asal Sekolah:* ${sekolah}
+*Kelas:* ${kelas}
+*Layanan:* ${layanan}
+*Payment:* ${payment}
+*Catatan:* ${catatan}
+            `.trim();
+
+            const encodedMessage = encodeURIComponent(message);
+            const waLink = `https://wa.me/6285783054947?text=${encodedMessage}`;
+            window.open(waLink, '_blank');
+        }
+    </script>
+</body>
+</html>
+              
